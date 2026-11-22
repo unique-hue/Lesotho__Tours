@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesotho Tourism - Contact and Booking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-custom" data-bs-theme="dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Lesotho Tourism</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+            <li class="nav-item"><a class="nav-link" href="accommodation.html">Accommodation</a></li>
+            <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link active" href="contact.html">Contact / Book</a></li>
+          </ul>
+          <button id="themeBtn" class="btn btn-warning ms-lg-3" type="button">Dark mode</button>
+        </div>
+      </div>
+    </nav>
+    <section class="page-title">
+      <div class="container">
+        <h1>Contact and Booking</h1>
+        <p class="mb-0">Ask a question or book your stay.</p>
+      </div>
+    </section>
+  </header>
+
+  <main class="container mt-4">
+
+    <div class="row g-5">
+
+      <!-- Form 1: Contact -->
+      <section class="col-12 col-lg-6">
+        <h2>Contact us</h2>
+
+        <div id="contactSuccess" class="alert alert-success d-none" role="alert">
+          Thank you! Your message was sent.
+        </div>
+
+        <form id="contactForm" novalidate>
+          <div class="mb-3">
+            <label for="cname" class="form-label">Full name</label>
+            <input type="text" id="cname" class="form-control" required minlength="2" placeholder="Your name">
+            <div class="invalid-feedback">Please enter your name (at least 2 letters).</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="cemail" class="form-label">Email</label>
+            <input type="email" id="cemail" class="form-control" required placeholder="you@example.com">
+            <div class="invalid-feedback">Please enter a valid email address.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="cphone" class="form-label">Phone number</label>
+            <input type="tel" id="cphone" class="form-control" required pattern="[0-9+ ]{8,15}" placeholder="+266 5000 0000">
+            <div class="invalid-feedback">Please enter 8 to 15 digits (you may use + and spaces).</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="csubject" class="form-label">Subject</label>
+            <input type="text" id="csubject" class="form-control" required placeholder="What is this about?">
+            <div class="invalid-feedback">Please enter a subject.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="cmessage" class="form-label">Message</label>
+            <textarea id="cmessage" class="form-control" rows="4" required minlength="10" placeholder="Write your message"></textarea>
+            <div class="invalid-feedback">Please write at least 10 characters.</div>
+          </div>
+
+          <button type="submit" class="btn btn-brand">Send message</button>
+        </form>
+      </section>
+
+      <!-- Form 2: Booking with cost calculator -->
+      <section class="col-12 col-lg-6">
+        <h2>Book your stay</h2>
+
+        <div id="bookingSuccess" class="alert alert-success d-none" role="alert"></div>
+
+        <form id="bookingForm" novalidate>
+          <div class="mb-3">
+            <label for="bname" class="form-label">Full name</label>
+            <input type="text" id="bname" class="form-control" required minlength="2" placeholder="Your name">
+            <div class="invalid-feedback">Please enter your name.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="bemail" class="form-label">Email</label>
+            <input type="email" id="bemail" class="form-control" required placeholder="you@example.com">
+            <div class="invalid-feedback">Please enter a valid email address.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="bdate" class="form-label">Arrival date</label>
+            <input type="date" id="bdate" class="form-control" required>
+            <div class="invalid-feedback">Please choose a date that is today or later.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="blodge" class="form-label">Lodge</label>
+            <select id="blodge" class="form-select" required>
+              <option value="">Choose a lodge</option>
+              <option value="1500">Maliba Lodge (M1500)</option>
+              <option value="900">Semonkong Lodge (M900)</option>
+              <option value="1100">Afriski Mountain Resort (M1100)</option>
+              <option value="1300">Sani Mountain Lodge (M1300)</option>
+            </select>
+            <div class="invalid-feedback">Please choose a lodge.</div>
+          </div>
+
+          <div class="row">
+            <div class="col-6 mb-3">
+              <label for="bnights" class="form-label">Nights</label>
+              <input type="number" id="bnights" class="form-control" required min="1" max="30" value="1">
+              <div class="invalid-feedback">Enter 1 to 30 nights.</div>
+            </div>
+            <div class="col-6 mb-3">
+              <label for="bpeople" class="form-label">People</label>
+              <input type="number" id="bpeople" class="form-control" required min="1" max="20" value="1">
+              <div class="invalid-feedback">Enter 1 to 20 people.</div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="bnotes" class="form-label">Extra information (optional)</label>
+            <textarea id="bnotes" class="form-control" rows="2" placeholder="Anything we should know?"></textarea>
+          </div>
+
+          <div class="alert alert-warning" role="status">
+            Estimated total: <strong id="total">M0</strong>
+          </div>
+
+          <button type="submit" class="btn btn-brand">Send booking</button>
+        </form>
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container text-center">
+      <p class="mb-1">Lesotho Tourism - Student project for Web Design (BIWD2110)</p>
+      <p class="mb-0"><a href="contact.html">Contact us</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
